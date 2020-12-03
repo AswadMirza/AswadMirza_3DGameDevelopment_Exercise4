@@ -1,2 +1,2 @@
-# AswadMirza_3DGameDevelopment_Exercise4
-Exercise 4 for 3D Game Development
+# AswadMirza_3D_GameDevelopment_Exercise4
+Exercise 4 for PROG38634
