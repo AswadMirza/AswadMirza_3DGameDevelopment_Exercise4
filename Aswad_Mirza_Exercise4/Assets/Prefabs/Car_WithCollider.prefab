@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 768733175}
   - component: {fileID: 7717661562857339643}
   - component: {fileID: 5122078083979312082}
+  - component: {fileID: 625957853}
   m_Layer: 0
   m_Name: Car_WithCollider
   m_TagString: Car
@@ -604,14 +605,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableDebug: 1
-  aspectName: 1
+  aspectName: 2
   detectionRate: 1
   fieldOfView: 45
-  viewDistance: 100
+  viewDistance: 10
   apectPerspectiveTransform: {fileID: 0}
   interestingObjects: []
   breakingDistance: 10
-  breakSpeed: 0.5
+  breakSpeed: 1
   initialMovementSpeed: 9
 --- !u!114 &5122078083979312082
 MonoBehaviour:
@@ -626,6 +627,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspectType: 3
+--- !u!114 &625957853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162520168103592084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e694ce0ed484740b447a42d5822e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableDebug: 1
+  aspectName: 1
+  detectionRate: 1
 --- !u!1001 &352577375
 PrefabInstance:
   m_ObjectHideFlags: 0
