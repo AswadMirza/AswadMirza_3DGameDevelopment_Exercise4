@@ -4,8 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-//Based On Code from example 4 in week 9 "AI.cs"
+//Aswad Mirza, 991445135 Exercise 4
+//Based On Code from example 4 in week 9 
 public class CivillianAi : MonoBehaviour
 {
     // Start is called before the first frame update

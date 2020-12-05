@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Aswad Mirza, 991445135 Exercise 4
+//Based On Code from example 4 in week 9 
 public class CivillianFire : StateMachineBehaviour
 {
     
