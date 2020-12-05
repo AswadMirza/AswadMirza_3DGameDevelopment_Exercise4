@@ -1,18 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
-public class CivillianFlee : MonoBehaviour
+public class CivillianFlee : StateMachineBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameObject containingGameObject;
+
+    CivillianAi civAiController;
+
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        containingGameObject = animator.gameObject;
+        civAiController = animator.gameObject.GetComponent<CivillianAi>();
+        civAiController.Flee(); 
     }
 
-    // Update is called once per frame
-    void Update()
+     
+
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        if (civAiController.Fled())
+        {
+            animator.SetBool("escaped", true);
+        }
+        else {
+            //if we havnt fled this means that the player is still close to us
+            animator.SetBool("escaped", false);
+        }
     }
 }

@@ -29,6 +29,8 @@ public class CivillianAi : MonoBehaviour
     public GameObject player;
     public float speed = 0.1f;
 
+    public Vector3 bulletForce = new Vector3(0,100,100);
+
     public Transform PatrolTarget { get; set; }
     public bool OnTarget
     {
@@ -130,7 +132,8 @@ public class CivillianAi : MonoBehaviour
     */
     public void Fire()
     {
-        Instantiate(bullet, transform.position + transform.forward, transform.rotation);
+        GameObject bulletObject= Instantiate(bullet, transform.position + transform.forward, transform.rotation);
+        bulletObject.GetComponent<Rigidbody>().AddRelativeForce(bulletForce);
     }
 
     public void Reload()
@@ -138,13 +141,16 @@ public class CivillianAi : MonoBehaviour
         animator.SetInteger("ammo", ammoCap);
     }
 
+    //returns if we are far enough from the player
     public bool Fled()
     {
         return Vector3.Distance(player.transform.position, transform.position) > fleeRange;
     }
 
+    //Makes the object run away
     public void Flee()
     {
+        //goes through the list of flee targets, and compares them, and picks the farthest point from its current position, and make it run to that
         nmAgent.SetDestination(
             fleeTargets.Aggregate((i, j) =>
                 Vector3.Distance(transform.position, i.position) > Vector3.Distance(transform.position, j.position)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CivillianFire : StateMachineBehaviour
 {
-    // Start is called before the first frame update
+    
     GameObject containingGameObject;
 
     CivillianAi civAiController;
@@ -25,7 +25,7 @@ public class CivillianFire : StateMachineBehaviour
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    {   
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
